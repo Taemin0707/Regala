@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "project-regala",
+  "private_key_id": "563a23c9e077518bd2e0ec11fc730f06dbeae3d0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDZAaTE88vsoezz\n+ryQu8MHKFJcMHNGyIZ3chZrtqZrmi08CXLy7uyStlQf8anVX44VquCWCVMSzUG/\nyT6ZS8x/2Lhs/Ilpa4W+uVikHg9Z9jagM5FkhGGt1n78mGD09TC7dgbevlnIdbC6\nM8LTlW0dGd//h925lBYDHG7apAujOSTeNkE1O34Omw5jEqO4OR6pB6ISq3ESt2ni\nDfW/ubp/XWxfD78In7ouxZfs+aUgcQ2slB0zzTGhpBueXObpFYYpmrgSfM+02Mhs\nSZtEhUPfP0Hdl8gkwMLgF4bVa341W6HIf2eTo9h7p3QClIDr+RUxmnBb3Ht6AiPL\nS6ISeM53AgMBAAECggEAFbcCY+r5dv5lFaz7fYgsZeT1COCYSHb8batu7uxiDtZo\nvF89r22VIsE3/dJS6lUbhLOKsbjRJUqAz841g2WAWzK2kcFbhr8JrSIi6plPc/Md\nWD6Qx/wvQhP6tRASc7CtZbTTzypBFbwhKSDQ2BdVydmy/oD8APv+j+UieqJ7v6Nj\nDI63M4iLf9tzgDnoUCIpdxNREWCs+Ne2b9Ktg/H2mrm2XUzrqVNwduWoWuMI3RGY\nnu6AYQ5MbuLMZY3T44/KxdZIVQ1uroj1z4hRomg/l2lgft3tgt30kTGgn/WxOm22\nB2+9ZxjENjPaEmGBI6rOekG2pim0Tjgzs/uUSIj/MQKBgQDwsqG/oj9t4QbYaaR5\nONidrmd3nqPgooQ8MFg31uW7l8wl7p4FMqf9zs/Kt2e4vzlNqZupo/fbAQTuwHDB\n+7hdvG+jectzOtIiostwksHGUpSPjTlUXWiYn0E+I/h/Ee0sEgixt8dOR1V6fBDh\n9+raBkPBk+dTl3tcBUrzaSEqawKBgQDmzW8KbPkiWm7+yiQ10QW4mLEuGHXd+7Bb\nYoA1ugFBoTYzMZ+sUdNwtZncfX+qA5c+s+rQzDwuD7/CcLCsuCF/VfCE+AdUW79u\nkg5mPETbU/LC2xZgYrrK9bk/fyh4EXAo2DM5EPG5eoFGpu5JawpSZLbpLyfiezd2\nLi30OD5HJQKBgDGfMhd21IrLlISzKtRO8uF3Hh+cFf7uokJiWR2R8SS+g7jiO7Oo\noNeDdnU9YGXHDoJDUDMl+agtyp2KEPT89yJkAcP7DQWBf+biFvzrVIWVask5fTM2\nWqT0WBf+hHF1+aZXRXGWCMHLlQS+ZSCg4sr19awH2O3z0dvDv5L0/oBnAoGAM6ON\nD5EYIKaJJPqHJX9Rv15ybfTNElCIwbmFJAAs3ck6/jNBHWXlX9dRyHJPyPMquL26\ncOLxKAEgD1n1PX+pBvtsZ+OyiB5K82s8S4V6hnP+4bfxBrmwP07BFsLVhB+qr4jH\n1SHEY5JUMEGTGNwZIBwmjH+fdd3Jp+hnIbgfvv0CgYA3WG6sE/ZlmAf/o5Gjp43a\n9yNjIjbEtvmyD069aR2qTndnqjcNEug6NL83Rg2mIGg7WIJ0cZMbpdAZZrBPs4ch\n0Q/4NMQ3+n/ZaJliowp6x2mIlGhC+iUQbU038UKrRttltpCZv6mikq/5NaNSrmWO\nhY3O/rHOeH0ZNs8/94StFQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "regala-admin@project-regala.iam.gserviceaccount.com",
+  "client_id": "100639354191697430880",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/regala-admin%40project-regala.iam.gserviceaccount.com"
+}

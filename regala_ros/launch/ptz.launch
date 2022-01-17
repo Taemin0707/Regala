@@ -1,0 +1,24 @@
+<launch>
+  <!-- Image size -->
+  <arg name="image_width" default="1920"/>
+  <arg name="image_height" default="1080"/>
+  
+  <node name="left_camera" pkg="regala_ros" type="rtsp_test.py" output="screen">
+    <param name="source" type="string" value="left" />
+    <param name="image_width" type="int" value="$(arg image_width)" />
+    <param name="image_height" type="int" value="$(arg image_height)" />
+  </node>
+  
+  <node name="center_camera" pkg="regala_ros" type="rtsp_test.py" output="screen">
+    <param name="source" type="string" value="center" />
+    <param name="image_width" type="int" value="$(arg image_width)" />
+    <param name="image_height" type="int" value="$(arg image_height)" />
+  </node>
+
+  <node name="right_camera" pkg="regala_ros" type="rtsp_test.py" output="screen" >
+    <param name="source" type="string" value="right" />
+    <param name="image_width" type="int" value="$(arg image_width)" />
+    <param name="image_height" type="int" value="$(arg image_height)" />
+  </node>
+
+</launch>

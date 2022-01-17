@@ -1,0 +1,24 @@
+<launch>
+  <node name="right_camera" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video4" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="camera_frame_id" value="right_camera" />
+    <param name="camera_name" value="right_camera" />
+    <param name="io_method" value="mmap"/>
+    <!-- <param name="camera_info_url" value="file://$(find regala_ros)/yaml/right_camera.yaml"/> -->
+  </node>
+
+  <node name="left_camera" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="camera_frame_id" value="left_camera" />
+    <param name="camera_name" value="left_camera" />
+    <param name="io_method" value="mmap"/>
+    <!-- <param name="camera_info_url" value="file://$(find regala_ros)/yaml/left_camera.yaml"/> -->
+  </node>
+
+</launch>

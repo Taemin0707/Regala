@@ -1,0 +1,2 @@
+# Check Video USB Port
+v4l2-ctl --list-devices
