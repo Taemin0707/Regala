@@ -3,11 +3,8 @@
 import rospy
 import numpy as np
 
-from sklearn.linear_model import LinearRegression
-
 import cv2
 
-from message_filters import ApproximateTimeSynchronizer, Subscriber
 from sensor_msgs.msg import Image, CompressedImage
 from cv_bridge.core import CvBridge, CvBridgeError
 
@@ -25,22 +22,29 @@ class VideoStitcher(object):
         # ROS-OpenCV Bridge
         self.bridge = CvBridge()
 
-        # Time Sync Subscriber
-        left_image_sub = Subscriber('/left_camera/image_raw', Image)
-        center_image_sub = Subscriber('/center_camera/image_raw', Image)
-        right_image_sub = Subscriber('/right_camera/image_raw', Image)
+        # Image
+        self.left_image = Image()
+        self.center_image = Image()
+        self.right_image = Image()
 
-        time_sync = ApproximateTimeSynchronizer([left_image_sub, center_image_sub, right_image_sub], queue_size=1, slop=0.1)
-        time_sync.registerCallback(self.callback)
+        # Subscribers
+        rospy.Subscriber('/left_camera/image_raw', Image, self.update_left_image)
+        rospy.Subscriber('/center_camera/image_raw', Image, self.update_center_image)
+        rospy.Subscriber('/right_camera/image_raw', Image, self.update_right_image)
+
+        # time_sync = ApproximateTimeSynchronizer([left_image_sub, center_image_sub, right_image_sub], queue_size=1, slop=0.1)
+        # time_sync.registerCallback(self.callback)
 
         # Stitched Image Publisher
         self.panorama_image_pub = rospy.Publisher('/panorama/image_raw', Image, queue_size=1)
 
-    def callback(self, left, center, right):
+        rospy.Timer(rospy.Duration(0.05), self.publish)
+
+    def publish(self, event):
         try:
-            left_img = self.bridge.imgmsg_to_cv2(left, "bgr8")
-            center_img = self.bridge.imgmsg_to_cv2(center, "bgr8")
-            right_img = self.bridge.imgmsg_to_cv2(right, "bgr8")
+            left_img = self.bridge.imgmsg_to_cv2(self.left_image, "bgr8")
+            center_img = self.bridge.imgmsg_to_cv2(self.center_image, "bgr8")
+            right_img = self.bridge.imgmsg_to_cv2(self.right_image, "bgr8")
 
             # pano_img = cv2.hconcat([left_img, center_img, right_img])
             pano_img = cv2.hconcat([right_img, center_img, left_img])
@@ -54,9 +58,18 @@ class VideoStitcher(object):
             self.panorama_image_pub.publish(self.bridge.cv2_to_imgmsg(pano_img, "bgr8"))
 
         except CvBridgeError as e:
-            print("here")
             print(e)
+    
+    def update_left_image(self, image):
+        self.left_image = image
+
+    def update_center_image(self, image):
+        self.center_image = image
+
+    def update_right_image(self, image):
+        self.right_image = image
         
+
 if __name__ == '__main__':
     print("Initializing Video Stitcher")
     rospy.init_node('video_stitcher', anonymous=False)

@@ -9,11 +9,11 @@ from sensor_msgs.msg import Image, CompressedImage
 from cv_bridge.core import CvBridge, CvBridgeError
 
 def camera_node(camera, image_size):
-
-    camera_info = {"right" : 92, "center" : 91, "left" : 90}
+    camera_info = {"right" : 4002, "center" : 4001, "left" : 4000}
+    # camera_info = {"right" : 92, "center" : 91, "left" : 90}
     url_num = camera_info[str(camera)]        
-
-    rtsp_url = "rtsp://taemin:kist@192.168.0." + str(url_num) + ":554/axis-media/media.amp"
+    rtsp_url = "rtsp://taemin:kist@211.114.183.94:" + str(url_num) + "/axis-media/media.amp"
+    # rtsp_url = "rtsp://taemin:kist@192.168.0." + str(url_num) + ":554/axis-media/media.amp"
     cap = cv2.VideoCapture(rtsp_url, cv2.CAP_FFMPEG)
 
     os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;udp"

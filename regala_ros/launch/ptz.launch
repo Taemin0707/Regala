@@ -1,7 +1,7 @@
 <launch>
   <!-- Image size -->
-  <arg name="image_width" default="1920"/>
-  <arg name="image_height" default="1080"/>
+  <arg name="image_width" default="1280"/>
+  <arg name="image_height" default="720"/>
   
   <node name="left_camera" pkg="regala_ros" type="rtsp_test.py" output="screen">
     <param name="source" type="string" value="left" />
@@ -17,6 +17,11 @@
 
   <node name="right_camera" pkg="regala_ros" type="rtsp_test.py" output="screen" >
     <param name="source" type="string" value="right" />
+    <param name="image_width" type="int" value="$(arg image_width)" />
+    <param name="image_height" type="int" value="$(arg image_height)" />
+  </node>
+
+  <node name="video_stitcher" pkg="regala_ros" type="video_stitcher.py" output="screen">
     <param name="image_width" type="int" value="$(arg image_width)" />
     <param name="image_height" type="int" value="$(arg image_height)" />
   </node>
